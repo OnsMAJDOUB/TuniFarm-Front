@@ -1,0 +1,99 @@
+
+.about-container {
+  padding: 40px;
+  background-color: #f8f8f8;
+  font-family: 'Arial', sans-serif;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #58b966;  
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-text {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #f39c12; 
+}
+
+.about-text h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text ul li {
+  font-size: 18px;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.about-text ul li strong {
+  color: #e67e22; 
+}
+
+.about-footer {
+  text-align: center;
+  background-color: #27ae60; 
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.about-footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 20px;
+  }
+
+  .about-header h1 {
+    font-size: 28px;
+  }
+
+  .about-text {
+    padding: 15px;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+  }
+}
