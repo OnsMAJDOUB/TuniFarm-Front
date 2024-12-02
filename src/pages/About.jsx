@@ -1,6 +1,6 @@
-
+// src/pages/About.js
 import React from "react";
-import "./About.css"; 
+import "./About.css"; // Ensure you add the related CSS styles
 
 const About = () => {
   return (

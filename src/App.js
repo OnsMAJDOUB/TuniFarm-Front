@@ -1,32 +1,65 @@
+import { useEffect } from "react";
+import "./App.css";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
+import About from "./pages/About";
+import ProductDetails from "./pages/ProductDetails";
+import Contact from "./pages/Contact";
+import ErrorPage from "./pages/ErrorPage";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
+import Shop from "./pages/Shop";
+import { Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { current } from "./JS/Actions/AuthActions";
+import ErrorsNotifications from "./components/ErrorsNotifications";
+import SuccessNotifications from "./components/SuccessNotifications";
 
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import About from './pages/About';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import ErrorPage from './pages/ErrorPage';
-import Profile from './pages/Profile';
-import Shop from './pages/Shop';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      dispatch(current());
+    }
+  }, [dispatch]);
+
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
+
+  const authErrors = useSelector((state) => state.AuthReducer.errors);
+
+  const authSuccess = useSelector((state) => state.AuthReducer.success);
+
   return (
     <div>
-      <NavBar/>
+      {authErrors &&
+        authErrors.map((error) => <ErrorsNotifications error={error} />)}
+      {authSuccess &&
+        authSuccess.map((success) => (
+          <SuccessNotifications success={success} />
+        ))}
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/*" element={<ErrorPage />} />
-        <Route path="/profile" element={<Profile />} />
+        {isAuth ? (
+          <Route path="/profile" element={<Profile />} />
+        ) : (
+          <>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </>
+        )}
+
         <Route path="/shop" element={<Shop />} />
+        <Route path="/*" element={<ErrorPage />} />
+        <Route path="productDetails/:id" element={<ProductDetails />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

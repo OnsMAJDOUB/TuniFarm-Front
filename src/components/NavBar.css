@@ -1,0 +1,161 @@
+navbar.css
+
+header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(34, 197, 94, 0.3); /* Light green translucent background */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header:hover {
+  backdrop-filter: blur(20px);
+  background-color: rgba(34, 197, 94, 0.5); /* Darker green when hovered */
+}
+
+nav {
+  max-width: 7xl;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 2rem;
+  width: auto;
+}
+
+nav .menu {
+  display: flex;
+  gap: 3rem;
+}
+
+nav .menu a,
+nav .menu .popover-button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav .menu a:hover,
+nav .menu .popover-button:hover {
+  color: #34d399; /* Light green on hover */
+}
+
+nav .menu .popover-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+nav .menu .popover-panel .group:hover {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+nav .menu .popover-panel .group a {
+  color: #2d3748; /* Dark gray for text */
+}
+
+nav .menu .popover-panel .group a:hover {
+  color: #34d399; /* Light green text on hover */
+}
+
+nav .menu .actions {
+  display: flex;
+  gap: 1rem;
+}
+
+nav .menu .actions a,
+nav .menu .actions .login-button,
+nav .menu .actions .register-button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .menu .actions a:hover {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+nav .menu .actions .login-button {
+  border: 1px solid white;
+}
+
+nav .menu .actions .register-button {
+  background-color: #34d399;
+  color: #2d3748; /* Dark gray */
+}
+
+nav .menu .actions .register-button:hover {
+  background-color: #10b981;
+}
+
+nav .mobile-menu-button {
+  display: none;
+}
+
+nav .mobile-menu-button button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+}
+
+nav .mobile-menu-dialog {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav .mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  background-color: white;
+  padding: 1rem;
+}
+
+nav .mobile-menu-panel .close-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+nav .mobile-menu-panel .menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+nav .mobile-menu-panel .menu-items a {
+  color: #2d3748; /* Dark gray */
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  transition: color 0.3s ease;
+}
+
+nav .mobile-menu-panel .menu-items a:hover {
+  color: #34d399; /* Light green on hover */
+}
+
+nav .mobile-menu-panel .menu-items .login-button {
+  border: 1px solid #34d399;
+  color: #34d399;
+}
+
+nav .mobile-menu-panel .menu-items .register-button {
+  background-color: #34d399;
+  color: white;
+}

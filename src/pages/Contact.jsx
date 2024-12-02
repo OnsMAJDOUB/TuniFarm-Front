@@ -7,14 +7,7 @@ export default function Contact() {
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-      >
-        <div
-
-        />
-      </div>
+    
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           Contact sales
@@ -24,7 +17,7 @@ export default function Contact() {
         </p>
       </div>
       <form
-        action="#"
+        action="/"
         method="POST"
         className="mx-auto mt-16 max-w-xl sm:mt-20"
       >
@@ -165,7 +158,7 @@ export default function Contact() {
             </div>
             <Label className="text-sm leading-6 text-gray-600">
               By selecting this, you agree to our{" "}
-              <a href="#" className="font-semibold text-indigo-600">
+              <a href="/" className="font-semibold text-indigo-600">
                 privacy&nbsp;policy
               </a>
               .
