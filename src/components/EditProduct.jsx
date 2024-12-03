@@ -68,17 +68,17 @@ const EditProduct = ({ product }) => {
             {/* Category */}
             <div className="col-span-2 sm:col-span-1">
               <label
-                htmlFor="category"
+                htmlFor="method"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Category
               </label>
               <input
                 type="text"
-                name="category"
-                id="category"
+                name="method"
+                id="method"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder={product.category}
+                placeholder={product.method}
                 required=""
                 onChange={(e) => handleChange(e)}
               />
@@ -111,10 +111,10 @@ const EditProduct = ({ product }) => {
               </label>
               <input
                 type="number"
-                name="stock"
+                name="quantity"
                 id="stock"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder={product.stock}
+                placeholder={product.quantity}
                 required=""
                 onChange={(e) => handleChange(e)}
               />

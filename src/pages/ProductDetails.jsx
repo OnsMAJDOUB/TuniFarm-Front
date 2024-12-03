@@ -63,7 +63,7 @@ export default function ProductDetails() {
                 >
                   <dt className="font-medium text-gray-900">Category</dt>
                   <dd className="mt-2 text-sm text-gray-500">
-                    {product.category}
+                    {product.method}
                   </dd>
                 </div>
                 <div
@@ -81,7 +81,7 @@ export default function ProductDetails() {
                 >
                   <dt className="font-medium text-gray-900">Stock</dt>
                   <dd className="mt-2 text-sm text-gray-500">
-                    {product.stock}
+                    {product.quantity}
                   </dd>
                 </div>
               </>
@@ -93,7 +93,7 @@ export default function ProductDetails() {
             <Spinner />
           ) : (
             <img
-              alt="Product Image"
+              alt="Product"
               src={product.image}
               className="rounded-lg bg-gray-100"
             />

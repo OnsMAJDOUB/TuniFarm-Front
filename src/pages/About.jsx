@@ -4,7 +4,7 @@ import "./About.css"; // Ensure you add the related CSS styles
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className="about-container" >
       <header className="about-header">
         <h1>À propos de TuniFarm</h1>
         <p>Votre marché local en ligne</p>

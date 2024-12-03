@@ -24,7 +24,7 @@ import axios from "axios";
 export const getProducts = () => async (dispatch) => {
   dispatch({ type: GET_PRODUCTS_LOAD });
   try {
-    const result = await axios.get("/api/products/get-products");
+    const result = await axios.get("/api/product/get-products");
     dispatch({
       type: GET_PRODUCTS_SUCCESS,
       payload: result.data.foundProducts,
@@ -38,7 +38,7 @@ export const getProducts = () => async (dispatch) => {
 export const getProductById = (id) => async (dispatch) => {
   dispatch({ type: GET_PRODUCT_BYID_LOAD });
   try {
-    const result = await axios.get(`/api/products/get-product/${id}`);
+    const result = await axios.get(`/api/product/get-product/${id}`);
     dispatch({ type: GET_PRODUCT_BYID_SUCCESS, payload: result.data });
   } catch (error) {
     dispatch({
@@ -56,7 +56,7 @@ export const addProduct = (newProduct) => async (dispatch) => {
       headers: { Authorization: localStorage.getItem("token") },
     };
     const result = await axios.post(
-      "/api/products/add-product",
+      "/api/product/add-product",
       newProduct,
       config
     );
@@ -71,7 +71,7 @@ export const addProduct = (newProduct) => async (dispatch) => {
 export const deleteProduct = (id, navigate) => async (dispatch) => {
   dispatch({ type: DELETE_PRODUCT_LOAD });
   try {
-    const result = await axios.delete(`/api/products/delete-product/${id}`);
+    const result = await axios.delete(`/api/product/delete-product/${id}`);
     dispatch({ type: DELETE_PRODUCT_SUCCESS, payload: result.data });
     navigate("/shop");
   } catch (error) {
@@ -84,7 +84,7 @@ export const editProduct = (id, newProduct) => async (dispatch) => {
   dispatch({ type: EDIT_PRODUCT_LOAD });
   try {
     const result = await axios.put(
-      `/api/products/update-product/${id}`,
+      `/api/product/update-product/${id}`,
       newProduct
     );
     dispatch({ type: EDIT_PRODUCT_SUCCESS, payload: result.data });
@@ -101,7 +101,7 @@ export const getMyProducts = () => async (dispatch) => {
     const config = {
       headers: { Authorization: localStorage.getItem("token") },
     };
-    const result = await axios.get("/api/products/get-my-products", config);
+    const result = await axios.get("/api/product/get-my-products", config);
     dispatch({
       type: GET_MY_PRODUCTS_SUCCESS,
       payload: result.data.foundMyProducts,

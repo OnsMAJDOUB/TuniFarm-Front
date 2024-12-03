@@ -125,7 +125,6 @@ import {
   MenuItem,
   MenuItems,
   Popover,
-  PopoverButton,
   PopoverGroup,
   PopoverPanel,
 } from "@headlessui/react";
@@ -135,7 +134,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../JS/Actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  ChevronDownIcon,
+ 
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
@@ -200,12 +199,21 @@ export default function NavBar() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-           <div className="flex items-center">
-            <Link to="/" className="text-white text-2xl font-bold">
-               TuniFarm
+          <div className="flex items-center">
+            <Link
+              to="/"
+              className="text-white text-3xl font-bold flex items-center"
+            >
+              <img
+                src="https://cdn0.iconfinder.com/data/icons/gardening-1-2/671/14-Plant-256.png"
+                alt="TuniFarm Icon"
+                className="w-8 h-8 mr-2" // Taille de l'icône et espace à droite
+              />
+              TuniFarm
             </Link>
-         </div>
+          </div>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -218,8 +226,6 @@ export default function NavBar() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-          
-
             <PopoverPanel
               transition
               className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition"
